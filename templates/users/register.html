@@ -1,0 +1,11 @@
+{% extends "learning_log/base.html" %}
+{% block content %}
+    <h4>十分感谢你的信任，虽然密码将自动加密，但出于安全考虑，以及作者能力水平，千 万 不 要 在这里填写与其他网站一样的密码。</h4>
+ <form method="post" action="{% url 'users:register' %}">
+ {% csrf_token %}
+ {{ form.as_p }}
+     <p>由于这里调用的是开源第三方库，密码有一些要求：1. 八位以上 2.不能纯数字 3.不要和用户名一模一样</p>
+ <button name="submit">注册</button>
+ <input type="hidden" name="next" value="{% url 'learning_log:index' %}" />
+ </form>
+{% endblock content %}

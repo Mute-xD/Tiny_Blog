@@ -1,0 +1,16 @@
+{% extends "learning_log/base.html" %}
+{% block header %}
+ <div class='jumbotron'>
+ <h1>随便写点什么吧</h1>
+ </div>
+{% endblock header %}
+{% block content %}
+ <h2>
+ <a href="{% url 'users:register' %}">注册Tiny Blog账号</a> 赢取价值999RMB的精美大礼一份（嘻嘻）
+ </h2>
+ <h2>
+ 什么话题都可以啦，记得在里面写一点内容哦
+ </h2><br><br><br>
+    <h1 align="center"><a href="{% url 'learning_log:topics'%}">从 #话题# 开始</a></h1><br><br><br>
+    <h6 align="right"><a href="/admin"> Mute-xD </a></h6>
+{% endblock content %}
